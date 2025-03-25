@@ -8,13 +8,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/api/v1/activity")
 public class ActivityController {
-
-    @PostMapping
-    public ResponseEntity<?> createActivity(@RequestBody ActivityDTO activityDTO) {
-        return ResponseEntity.status(HttpStatus.OK).body(activityDTO);
+    ActivityService activityService;
+    public ActivityController(ActivityService activityService){
+        this.activityService = activityService;
     }
 
+    @PostMapping
+    public ResponseEntity<Map<String, String>> createActivity(@RequestBody ActivityDTO activityDTO) {
+        return ResponseEntity.status(HttpStatus.OK).body(this.activityService.create(activityDTO));
+    }
 }

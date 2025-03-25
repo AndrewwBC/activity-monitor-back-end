@@ -1,10 +1,13 @@
 package extension.extension.activity.dto;
 
-import extension.extension.activity.utils.TabsDataType;
-
-import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 public record ActivityDTO(
-        Map<Integer, TabsDataType> activity
+        String title,
+        String url,
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
+        String creationDate,
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
+        String endDate
 )
 {}

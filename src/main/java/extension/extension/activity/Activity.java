@@ -1,8 +1,11 @@
 package extension.extension.activity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import extension.extension.activity.dto.ActivityDTO;
 import extension.extension.user.User;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -10,6 +13,8 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "activity")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Activity implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
