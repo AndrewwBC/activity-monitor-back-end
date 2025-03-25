@@ -1,6 +1,6 @@
 package extension.extension.user;
 
-import extension.extension.activity.utils.Activity;
+import extension.extension.activity.Activity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

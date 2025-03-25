@@ -1,4 +1,4 @@
-package extension.extension.activity.utils;
+package extension.extension.activity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import extension.extension.user.User;

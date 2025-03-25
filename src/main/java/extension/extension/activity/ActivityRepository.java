@@ -1,4 +1,4 @@
-package extension.extension.activity.utils;
+package extension.extension.activity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
