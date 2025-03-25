@@ -17,6 +17,9 @@ public class ActivityService {
     }
 
     public Map<String, String> create(ActivityDTO activityDTO) {
+        Activity newActivity = Activity.fromDTOCreateActivity(activityDTO);
+        this.activityRepository.save(newActivity);
+
         Map<String, String> response = new HashMap<>();
         response.put("message", "created");
 
