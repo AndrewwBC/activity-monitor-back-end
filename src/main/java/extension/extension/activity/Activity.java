@@ -26,6 +26,7 @@ public class Activity {
     private Integer facebookReels;
     private Integer facebookStories;
     private Integer youtubeShorts;
+
     @ManyToOne
     @JsonIgnore
     private User user;
