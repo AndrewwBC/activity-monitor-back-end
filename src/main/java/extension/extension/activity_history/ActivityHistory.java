@@ -1,5 +1,6 @@
-package extension.extension.activity;
+package extension.extension.activity_history;
 
+import extension.extension.activity.Activity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

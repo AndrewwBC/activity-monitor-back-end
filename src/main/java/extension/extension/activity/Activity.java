@@ -2,6 +2,7 @@ package extension.extension.activity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import extension.extension.activity.dto.ActivityDTO;
+import extension.extension.activity_history.ActivityHistory;
 import extension.extension.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
