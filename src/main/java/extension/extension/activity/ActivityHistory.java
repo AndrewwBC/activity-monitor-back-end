@@ -16,13 +16,21 @@ public class ActivityHistory {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
-    private LocalDateTime initialDate;
-    private LocalDateTime endDate;
+    private LocalDateTime initialDateAndTime = LocalDateTime.now();
+    private LocalDateTime endDateAndTime = null;
 
     private Integer stories;
     private Integer instagramReels;
     private Integer facebookReels;
     private Integer facebookStories;
     private Integer youtubeShorts;
+
+    public ActivityHistory(Integer stories, Integer instagramReels, Integer facebookReels, Integer facebookStories, Integer youtubeShorts){
+        this.stories = stories;
+        this.instagramReels = instagramReels;
+        this.facebookReels = facebookReels;
+        this.facebookStories = facebookStories;
+        this.youtubeShorts = youtubeShorts;
+    }
 
 }
