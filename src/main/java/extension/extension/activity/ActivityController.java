@@ -4,10 +4,7 @@ import extension.extension.activity.dto.ActivityDTO;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -21,6 +18,12 @@ public class ActivityController {
 
     @PostMapping
     public ResponseEntity<Map<String, String>> createActivity(@RequestBody @Valid ActivityDTO activityDTO) {
+        System.out.println(activityDTO);
+        return ResponseEntity.status(HttpStatus.OK).body(this.activityService.create(activityDTO));
+    }
+
+    @PutMapping
+    public ResponseEntity<Map<String, String>> putActivity(@RequestBody @Valid ActivityDTO activityDTO) {
         System.out.println(activityDTO);
         return ResponseEntity.status(HttpStatus.OK).body(this.activityService.create(activityDTO));
     }
