@@ -15,7 +15,6 @@ public class Activity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    private String tabId;
     @Column(unique = true)
     private String url;
     private String title;
@@ -25,8 +24,7 @@ public class Activity {
     @ManyToOne
     @JsonIgnore
     private User user;
-    public Activity(String tabId, String url, String title, String creationDate, String endDate) {
-        this.tabId = tabId;
+    public Activity(String url, String title, String creationDate, String endDate) {
         this.url = url;
         this.title = title;
         this.creationDate = creationDate;
