@@ -25,6 +25,9 @@ public class ActivityHistory {
     private Integer facebookStories;
     private Integer youtubeShorts;
 
+    @ManyToOne
+    private Activity activity;
+
     public ActivityHistory(Integer stories, Integer instagramReels, Integer facebookReels, Integer facebookStories, Integer youtubeShorts){
         this.stories = stories;
         this.instagramReels = instagramReels;

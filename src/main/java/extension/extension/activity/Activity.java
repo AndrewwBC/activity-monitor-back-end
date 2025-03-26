@@ -7,6 +7,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name = "activity")
 @AllArgsConstructor
@@ -18,25 +20,21 @@ public class Activity {
     @Column(unique = true)
     private String url;
     private String title;
-    private String creationDate;
-    private String endDate;
+
+    @OneToMany
+    private List<ActivityHistory> activityHistory;
 
     @ManyToOne
     @JsonIgnore
     private User user;
-    public Activity(String url, String title, String creationDate, String endDate) {
+    public Activity(String url, String title) {
         this.url = url;
         this.title = title;
-        this.creationDate = creationDate;
-        this.endDate = endDate;
     }
     public static Activity fromDTOCreateActivity(ActivityDTO activityDTO){
         return new Activity(
-                activityDTO.tabId(),
                 activityDTO.url(),
-                activityDTO.title(),
-                activityDTO.creationDate(),
-                activityDTO.endDate()
+                activityDTO.title()
         );
     }
     @Override
@@ -45,8 +43,6 @@ public class Activity {
                 "id='" + id + '\'' +
                 ", url='" + url + '\'' +
                 ", title='" + title + '\'' +
-                ", creationDate='" + creationDate + '\'' +
-                ", endDate='" + endDate + '\'' +
                 '}';
     }
 }
