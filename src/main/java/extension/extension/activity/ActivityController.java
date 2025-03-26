@@ -25,6 +25,6 @@ public class ActivityController {
     @PatchMapping
     public ResponseEntity<Map<String, String>> patchActivity(@RequestBody @Valid ActivityDTO activityDTO) {
         System.out.println(activityDTO);
-        return ResponseEntity.status(HttpStatus.OK).body(this.activityService.create(activityDTO));
+        return ResponseEntity.status(HttpStatus.OK).body(this.activityService.patch(activityDTO));
     }
 }
