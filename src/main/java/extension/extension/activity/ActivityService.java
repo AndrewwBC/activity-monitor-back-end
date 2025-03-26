@@ -23,4 +23,14 @@ public class ActivityService {
 
         return response;
     }
+
+    public Map<String, String> patch(ActivityDTO activityDTO) {
+        Activity newActivity = Activity.fromDTOCreateActivity(activityDTO);
+        this.activityRepository.save(newActivity);
+
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "patched");
+
+        return response;
+    }
 }
