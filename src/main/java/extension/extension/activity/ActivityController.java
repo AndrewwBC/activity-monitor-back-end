@@ -1,6 +1,7 @@
 package extension.extension.activity;
 
 import extension.extension.activity.dto.ActivityDTO;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,7 +20,8 @@ public class ActivityController {
     }
 
     @PostMapping
-    public ResponseEntity<Map<String, String>> createActivity(@RequestBody ActivityDTO activityDTO) {
+    public ResponseEntity<Map<String, String>> createActivity(@RequestBody @Valid ActivityDTO activityDTO) {
+        System.out.println(activityDTO);
         return ResponseEntity.status(HttpStatus.OK).body(this.activityService.create(activityDTO));
     }
 }

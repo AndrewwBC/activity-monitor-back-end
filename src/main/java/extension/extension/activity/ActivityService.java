@@ -1,7 +1,5 @@
 package extension.extension.activity;
 
-
-import extension.extension.activity.ActivityRepository;
 import extension.extension.activity.dto.ActivityDTO;
 import org.springframework.stereotype.Service;
 

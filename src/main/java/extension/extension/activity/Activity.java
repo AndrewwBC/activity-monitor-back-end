@@ -21,18 +21,44 @@ public class Activity {
     private String title;
     private String creationDate;
     private String endDate;
+    private Integer stories;
+    private Integer instagramReels;
+    private Integer facebookReels;
+    private Integer facebookStories;
+    private Integer youtubeShorts;
     @ManyToOne
     @JsonIgnore
     private User user;
-    public Activity(String tabId, String url, String title, String creationDate, String endDate){
+    public Activity(String tabId, String url, String title, String creationDate, String endDate,
+                    Integer stories, Integer instagramReels,
+                    Integer facebookReels,
+                    Integer facebookStories,
+                    Integer youtubeShorts
+    ){
         this.tabId = tabId;
         this.url = url;
         this.title = title;
         this.creationDate = creationDate;
         this.endDate = endDate;
+        this.stories =stories;
+        this.instagramReels = instagramReels;
+        this.facebookReels = facebookReels;
+        this.facebookStories = facebookStories;
+        this.youtubeShorts = youtubeShorts;
     }
     public static Activity fromDTOCreateActivity(ActivityDTO activityDTO){
-        return new Activity(activityDTO.tabId(), activityDTO.url(), activityDTO.title(), activityDTO.creationDate(), activityDTO.endDate());
+        return new Activity(
+                activityDTO.tabId(),
+                activityDTO.url(),
+                activityDTO.title(),
+                activityDTO.creationDate(),
+                activityDTO.endDate(),
+                activityDTO.stories(),
+                activityDTO.instagramReels(),
+                activityDTO.facebookReels(),
+                activityDTO.facebookStories(),
+                activityDTO.youtubeShorts()
+        );
     }
     @Override
     public String toString() {

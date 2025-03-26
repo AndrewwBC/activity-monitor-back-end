@@ -9,6 +9,11 @@ public record ActivityDTO(
         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
         String creationDate,
         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
-        String endDate
+        String endDate,
+        Integer stories,
+        Integer instagramReels,
+        Integer facebookReels,
+        Integer facebookStories,
+        Integer youtubeShorts
 )
 {}
