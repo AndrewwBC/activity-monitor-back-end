@@ -11,9 +11,6 @@ public class ActivityHistory {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-
-    private LocalDateTime initialDateAndTime = LocalDateTime.now();
-    private LocalDateTime endDateAndTime = null;
     private Integer stories = 0;
     private Integer instagramReels = 0;
     private Integer facebookReels = 0;
@@ -36,14 +33,6 @@ public class ActivityHistory {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public void setInitialDateAndTime(LocalDateTime initialDateAndTime) {
-        this.initialDateAndTime = initialDateAndTime;
-    }
-
-    public void setEndDateAndTime(LocalDateTime endDateAndTime) {
-        this.endDateAndTime = endDateAndTime;
     }
 
     public void setStories(Integer stories) {
@@ -72,14 +61,6 @@ public class ActivityHistory {
 
     public String getId() {
         return id;
-    }
-
-    public LocalDateTime getInitialDateAndTime() {
-        return initialDateAndTime;
-    }
-
-    public LocalDateTime getEndDateAndTime() {
-        return endDateAndTime;
     }
 
     public Integer getStories() {
@@ -121,8 +102,6 @@ public class ActivityHistory {
     public String toString() {
         return "ActivityHistory{" +
                 "id='" + id + '\'' +
-                ", initialDateAndTime=" + initialDateAndTime +
-                ", endDateAndTime=" + endDateAndTime +
                 ", stories=" + stories +
                 ", instagramReels=" + instagramReels +
                 ", facebookReels=" + facebookReels +
